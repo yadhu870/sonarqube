@@ -11,7 +11,7 @@ pipeline {
         // This can be http or https
         NEXUS_PROTOCOL = "http"
         // Where your Nexus is running
-        NEXUS_URL = "35.88.243.101:8080"
+        NEXUS_URL = "172.31.7.76:8080"
         // Repository where we will upload the artifact
         NEXUS_REPOSITORY = "yadhu-auto"
         // Jenkins credential id to authenticate to Nexus OSS
@@ -90,7 +90,7 @@ stage('SonarQube analysis') {
                      steps{
                           sshagent(['a4a074d6-0481-4476-a01a-1b36f1829f1e'])
                           {
-               sh 'scp -o StrictHostKeyChecking=no target/webapp.war root@35.89.13.203:/opt/tomcat/webapps/'
+               sh 'scp -o StrictHostKeyChecking=no target/webapp.war root@172.31.2.193:/opt/tomcat/webapps/'
                            }
                           }
                      }
